@@ -27,8 +27,8 @@ public:
 };
 NoSerialOutputClass NoSerialOutput;
 
-#define WIFI_SSID "S24"
-#define WIFI_PASSWORD "rio12345"
+#define WIFI_SSID "your wifi"
+#define WIFI_PASSWORD "your password"
 #define WIFI_CONNECT_TIMEOUT_MS 12000
 
 #define PIN_SDA 21
@@ -504,7 +504,7 @@ void wifi(){
   while(WiFi.status()!=WL_CONNECTED&&millis()-t<WIFI_CONNECT_TIMEOUT_MS)delay(250);
   if(WiFi.status()==WL_CONNECTED){
     configTime(GMT_OFFSET_SEC,DAYLIGHT_OFFSET_SEC,"pool.ntp.org","time.nist.gov");
-    RealSerial.print("S24 IP: ");
+    RealSerial.print("your wifi IP: ");
     RealSerial.println(WiFi.localIP());
   } else {
     RealSerial.print("WiFi connect failed, status=");
